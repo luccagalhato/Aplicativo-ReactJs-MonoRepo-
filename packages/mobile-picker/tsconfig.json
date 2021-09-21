@@ -1,0 +1,13 @@
+{
+  "extends": "expo/tsconfig.base",
+  "typeRoots": ["./src/.env.d.ts"],
+  "compilerOptions": {
+    "jsx": "react",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "typeAcquisition": {
+    "include": ["node_modules/@types", "**/@types"]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "ToDo Picker",
+    "slug": "todo-picker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/todo-icon.png",
+    "splash": {
+      "image": "./assets/todo-splashscreen@2x.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#14412D"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/todo-icon.png",
+        "backgroundColor": "#007435"
+      },
+      "package": "com.todogreen.picker"
+    },
+    "web": {
+      "favicon": "./assets/todo-icon.png"
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["expo.ts", "expo.tsx", "ts", "tsx", "json", "svg"]
+    }
+  }
+}

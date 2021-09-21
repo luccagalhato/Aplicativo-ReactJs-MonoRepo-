@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "app/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "node_modules/@types",
+      "**/@types"
+    ]
+  },
+  "extends": "expo/tsconfig.base"
+}

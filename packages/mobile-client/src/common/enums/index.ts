@@ -1,0 +1,45 @@
+export enum AppTypeEnum {
+  USER_APP = "USER",
+  COLLABORATOR_APP = "COLLABORATOR",
+  PARTNER_DASHBOARD = "PARTNER_DASHBOARD",
+}
+
+export enum TabBarItemEnum {
+  HOME = "Home",
+  SEARCH = "Search",
+  CART = "Cart",
+  PROFILE = "Profile",
+}
+
+export enum OrderBy {
+  RECOMMENDED = "recommended",
+  PRICE = "price",
+  MOST_POPULAR = "most_popular",
+  TIME_OF_DELIVERY = "time_of_delivery",
+  PRICE_OF_DELIVERY = "price_of_delivery",
+  RATING = "rating",
+}
+
+export enum OrderStatus {
+  PLACED,
+  PROCESSING,
+  ON_WAY,
+  DELIVERED,
+  CONFIRMED,
+  CANCELED,
+}
+
+export enum DeliveryStatusEnum {
+  PREPARING = "PREPARING",
+  NEW_ORDER = "NEW_ORDER",
+  WAITING_COLLABORATOR = "WAITING_COLLABORATOR",
+  WAY_TO_CLIENT = "WAY_TO_CLIENT",
+  ORDER_READY = "ORDER_READY",
+  DELIVERED = "DELIVERED",
+  WAITING_CLIENT = "WAITING_CLIENT",
+  PROCESSING = "PROCESSING",
+  WAITING_ORDER_CONFIRMATION = "WAITING_ORDER_CONFIRMATION",
+  ORDER_REFUSED = "ORDER_REFUSED",
+  ORDER_FINISHED = "ORDER_FINISHED",
+  ORDER_CANCELED = "ORDER_CANCELED",
+}

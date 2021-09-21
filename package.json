@@ -1,0 +1,58 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:client": "yarn workspace @todo/client lint",
+    "lint:picker": "yarn workspace @todo/picker lint",
+    "format": "prettier --write --ignore-path .gitignore packages/**",
+    "clean": "npm-run-all --parallel clean:*",
+    "clean:node-modules": "rimraf node_modules packages/*/node_modules",
+    "clean:expo-cache": "rimraf packages/*/.expo",
+    "start:client": "yarn workspace @todo/client start --tunnel --clear",
+    "start:picker": "yarn workspace @todo/picker start --tunnel --clear",
+    "postinstall": "npm-run-all --parallel postinstall:*",
+    "postinstall:patch": "patch-package",
+    "postinstall:client": "cd ./packages/mobile-client && expo-yarn-workspaces postinstall",
+    "postinstall:picker": "cd ./packages/mobile-picker && expo-yarn-workspaces postinstall"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "expo-tracking-transparency": "^1.0.0",
+    "metro-config": "0.56",
+    "react-native-juno-rn-card-hash": "^1.2.0"
+  },
+  "devDependencies": {
+    "@expo/webpack-config": "^0.12.71",
+    "@types/expo__vector-icons": "^9.0.1",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/react": "~16.9.35",
+    "@types/react-native": "~0.63.2",
+    "@types/rn-swipeable-panel": "^1.2.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^3.1.0",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/**/src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
